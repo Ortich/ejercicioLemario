@@ -81,13 +81,20 @@ public class EjercicioLemario {
 		    }   
 		}
 		else{
+		    System.out.println("La palabra "+palabras[i+1]+" no existe.");
 		    return false;
 		}
-		if(contadorDiferentes!=1){
+		if(contadorDiferentes>1){
+		    System.out.println("La palabra "+palabras[i+1]+" varia en mas de una letra.");
+		   esEscalera = false;
+		}
+		if(contadorDiferentes==0){
+		    System.out.println("La palabra "+palabras[i+1]+" es igual a la anterior.");
 		   esEscalera = false;
 		}
 	    }
 	    else{
+		 System.out.println("La palabra "+palabras[i+1]+" es muy larga.");
 		esEscalera = false;
 		return esEscalera;
 	    }
@@ -109,7 +116,7 @@ public class EjercicioLemario {
 	
 	//Test escalera
 	System.out.println("Test escalera");
-	String[] prueba1 = {"dedo", "dado", "daño", "maño", "mano"};
+	String[] prueba1 = {"dedo", "dado", "daño", "maño", "pata"};
 	System.out.println(test.escalera(prueba1));
 	System.out.println("");
     }
